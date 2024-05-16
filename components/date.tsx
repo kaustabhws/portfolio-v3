@@ -2,6 +2,7 @@
 
 import { format } from "date-fns";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const DatePage = () => {
   const date = new Date();
@@ -14,16 +15,53 @@ const DatePage = () => {
       onClick={() => setShow(!show)}
     >
       <div>
-        <div className="md:w-72 md:h-72 border hover:border-gray-500 transition-all rounded-full relative h-64 w-64 max-[268px]:w-52 max-[268px]:h-52 flex justify-center items-center z-10">
-          <div className="absolute -z-10 -top-6 right-14 m-2 px-2 text-4xl md:text-5xl bg-black max-[268px]:text-3xl">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.3,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+          className="md:w-72 md:h-72 border hover:border-gray-500 transition-all rounded-full relative h-64 w-64 max-[268px]:w-52 max-[268px]:h-52 flex justify-center items-center z-10"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1.0,
+              delay: 0.4,
+              ease: [0, 0.71, 0.2, 1.01],
+            }}
+            className="absolute -z-10 -top-6 right-14 m-2 px-2 text-4xl md:text-5xl bg-black max-[268px]:text-3xl"
+          >
             {format(date, "MMMM")}
-          </div>
-          <div className="absolute -z-10 top-8 -right-5 m-2 px-2 text-6xl md:text-7xl bg-black max-[268px]:text-4xl">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1.0,
+              delay: 0.5,
+              ease: [0, 0.71, 0.2, 1.01],
+            }}
+            className="absolute -z-10 top-8 -right-5 m-2 px-2 text-6xl md:text-7xl bg-black max-[268px]:text-4xl"
+          >
             {format(date, "dd")}
-          </div>
+          </motion.div>
           <div className="text-center text-xl md:text-2xl">
             {!show ? (
-              "About me"
+              <motion.p
+                initial={{ opacity: 0}}
+                animate={{ opacity: 1}}
+                transition={{
+                  duration: 1.0,
+                  delay: 0.6,
+                  ease: [0, 0.71, 0.2, 1.01],
+                }}
+              >
+                About me
+              </motion.p>
             ) : (
               <div className="text-sm px-5 pt-2 w-48">
                 Hi there! My name is Kaustabh, and I am a full stack web
@@ -32,7 +70,7 @@ const DatePage = () => {
               </div>
             )}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

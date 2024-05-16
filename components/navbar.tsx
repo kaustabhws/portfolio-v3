@@ -31,11 +31,29 @@ const Navbar = () => {
       className="fixed w-full backdrop-blur-sm bg-gradient-to-b from-black to-transparent pt-3"
     >
       <div className="relative flex h-16 items-center justify-between px-4 max-[272px]:px-1 lg:w-4/6 md:w-4/5 mx-auto max-[480px]:justify-center">
-        <div className="hidden max-[480px]:block absolute left-2">
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1.0,
+            delay: 0,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+          className="hidden max-[480px]:block absolute left-2"
+        >
           <MobileNav />
-        </div>
+        </motion.div>
         <Link href="/">
-          <div className="flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1.0,
+              delay: 0,
+              ease: [0, 0.71, 0.2, 1.01],
+            }}
+            className="flex items-center justify-center"
+          >
             <Image
               src="/logo.svg"
               width={100}
@@ -43,11 +61,20 @@ const Navbar = () => {
               alt="Kaustabh Logo"
               className="w-32"
             />
-          </div>
+          </motion.div>
         </Link>
-        <div className="block max-[480px]:hidden">
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1.2,
+            delay: 0,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+          className="block max-[480px]:hidden"
+        >
           <MainNav className="ml-6 space-x-4 text-xl" />
-        </div>
+        </motion.div>
       </div>
     </motion.nav>
   );
