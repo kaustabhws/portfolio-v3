@@ -24,8 +24,7 @@ export default function RootLayout({
       <body className={maven.className}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
           disableTransitionOnChange
         >
           <Navbar />
