@@ -52,8 +52,8 @@ const DatePage = () => {
           <div className="text-center text-xl md:text-2xl">
             {!show ? (
               <motion.p
-                initial={{ opacity: 0}}
-                animate={{ opacity: 1}}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{
                   duration: 1.0,
                   delay: 0.6,
@@ -63,11 +63,20 @@ const DatePage = () => {
                 About me
               </motion.p>
             ) : (
-              <div className="text-sm px-5 pt-2 w-48">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  duration: 1.0,
+                  delay: 0.1,
+                  ease: [0, 0.71, 0.2, 1.01],
+                }}
+                className="text-sm px-5 pt-2 w-48"
+              >
                 Hi there! My name is Kaustabh, and I am a full stack web
                 developer. I enjoy creating stuff with code and learning about
                 new things related to programming.
-              </div>
+              </motion.div>
             )}
           </div>
         </motion.div>
