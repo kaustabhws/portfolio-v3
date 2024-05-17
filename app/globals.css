@@ -96,6 +96,7 @@ body {
   --sb-track-color: #000000;
   --sb-thumb-color: #676767;
   --sb-size: 14px;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {

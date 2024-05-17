@@ -1,15 +1,23 @@
 "use client";
 
-import { ArrowDownRight } from "lucide-react";
+import { ArrowDown, ArrowDownRight } from "lucide-react";
 import DatePage from "../date";
 import { motion } from "framer-motion";
+import { MotionDiv } from "@/utils/motion-div";
+
+const scrollDown = () => {
+  window.scrollBy({
+    top: window.innerHeight,
+    behavior: "smooth",
+  });
+};
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen pt-40 max-[325px]:px-2 px-7 min-[1100px]:w-[70%] mx-auto w-full">
+    <div className="min-h-screen pt-40">
       <div className="flex flex-col">
         <div className="font-ampersandbold max-[880px]:text-6xl max-[570px]:text-4xl text-8xl flex flex-col max-w-max">
-          <motion.h1
+          <MotionDiv
             initial={{ opacity: 0, y: 90 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -19,8 +27,8 @@ const HomePage = () => {
             }}
           >
             Hello,
-          </motion.h1>
-          <motion.p
+          </MotionDiv>
+          <MotionDiv
             initial={{ opacity: 0, y: 90 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -30,8 +38,8 @@ const HomePage = () => {
             }}
           >
             I am Kaustabh
-          </motion.p>
-          <motion.div
+          </MotionDiv>
+          <MotionDiv
             initial={{ opacity: 0, y: 90 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -43,9 +51,24 @@ const HomePage = () => {
           >
             <ArrowDownRight />
             <p>Full Stack Developer</p>
-          </motion.div>
+          </MotionDiv>
         </div>
-        <DatePage />
+        <div className="flex justify-between max-[430px]:flex-col-reverse max-[430px]:items-center max-[430px]:gap-6">
+          <MotionDiv
+            initial={{ opacity: 0, y: 90 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1.0,
+              delay: 0.3,
+              ease: [0, 0.71, 0.2, 1.01],
+            }}
+            className="min-[430px]:self-end cursor-pointer"
+            onClick={scrollDown}
+          >
+            <ArrowDown size={50} />
+          </MotionDiv>
+          <DatePage />
+        </div>
       </div>
     </div>
   );
