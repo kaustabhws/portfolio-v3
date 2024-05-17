@@ -14,7 +14,7 @@ const SkillsPage = () => {
   const data: any = DataFetcher({ dataUrl: "techn" });
 
   return (
-    <div className="md:pt-14">
+    <div className="md:pt-14 pt-9">
       <MotionDiv
         ref={ref}
         initial={{ opacity: 0, y: 90 }}
@@ -24,13 +24,13 @@ const SkillsPage = () => {
           delay: 0,
           ease: [0, 0.71, 0.2, 1.01],
         }}
-        className="flex items-end gap-2"
+        className="flex items-end gap-2 justify-end"
       >
         <div className="max-[880px]:text-6xl max-[570px]:text-4xl text-7xl font-ampersandlight uppercase">
           Skills
         </div>
         <span>
-          <ArrowDownLeft size={50} />
+          <ArrowDownLeft size={50} className="max-[570px]:h-7 max-[570px]:w-7" />
         </span>
       </MotionDiv>
       <div className="flex items-center justify-center gap-6 flex-wrap my-10 md:w-[75%] mx-auto">

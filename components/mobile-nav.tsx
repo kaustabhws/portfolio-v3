@@ -7,7 +7,6 @@ import {
 import { MainNav } from "./main-nav";
 import Image from "next/image";
 import { useState } from "react";
-import { Button } from "./ui/button";
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,6 +38,7 @@ const MobileNav = () => {
             height={100}
             alt="Kaustabh Logo"
             className="w-32"
+            priority
           />
         </SheetHeader>
         <div className="mt-10 flex justify-center">
