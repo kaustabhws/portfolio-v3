@@ -28,7 +28,7 @@ const Navbar = () => {
       }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className="fixed w-full backdrop-blur-sm bg-gradient-to-b from-black to-transparent pt-3"
+      className="fixed z-50 w-full backdrop-blur-sm bg-gradient-to-b from-black to-transparent pt-3"
     >
       <div className="relative flex h-16 items-center justify-between px-4 max-[272px]:px-1 lg:w-4/6 md:w-4/5 mx-auto max-[480px]:justify-center">
         <motion.div
