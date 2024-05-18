@@ -1,5 +1,6 @@
 import AboutPage from "@/components/about/about";
 import HomePage from "@/components/home/home";
+import ProjectsPage from "@/components/projects/projects";
 import SkillsPage from "@/components/skills/skills";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <HomePage />
       <AboutPage />
       <SkillsPage />
+      <ProjectsPage />
     </div>
   );
 }

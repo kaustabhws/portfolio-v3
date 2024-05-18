@@ -53,7 +53,7 @@ const SkillsPage = () => {
               width={120}
               height={120}
               unoptimized
-              className="w-16 h-16"
+              className="w-auto h-16 aspect-auto"
             />
           </MotionDiv>
         ))}

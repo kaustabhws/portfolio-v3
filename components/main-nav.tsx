@@ -27,9 +27,9 @@ export function MainNav({
       active: pathname === `#about`,
     },
     {
-      href: `#services`,
+      href: `#projects`,
       label: "Projects",
-      active: pathname === `#services`,
+      active: pathname === `#projects`,
     },
     {
       href: `#contact`,

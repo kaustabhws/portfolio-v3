@@ -42,7 +42,7 @@ const AboutPage = () => {
         </span>
       </MotionDiv>
       <div className="flex items-center justify-between gap-20 pt-10 max-[830px]:flex-col max-[830px]:gap-10">
-        <div className="flex-1 flex flex-col gap-10">
+        <div className="flex-1 flex flex-col gap-10 text-lg">
           <MotionDiv
             ref={ref2}
             initial={{ opacity: 0, y: 90 }}
