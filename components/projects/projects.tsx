@@ -30,6 +30,7 @@ const ProjectsPage = () => {
             <div
               className={`flex items-center gap-10 max-[885px]:flex-col 
               ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
+              key={index}
             >
               <div className="flex-[0.9]">
                 <video
@@ -63,7 +64,11 @@ const ProjectsPage = () => {
                     __html: project?.data.description,
                   }}
                 />
-                <div className={`list-none flex items-center flex-wrap font-mono gap-3 rounded-lg text-sm ${index % 2 === 0 ? 'justify-end' : 'justify-start'} mt-5`}>
+                <div
+                  className={`list-none flex items-center flex-wrap font-mono gap-3 rounded-lg text-sm ${
+                    index % 2 === 0 ? "justify-end" : "justify-start"
+                  } mt-5`}
+                >
                   {project.data.techstack.tech.map(
                     (tech: string, techIndex: number) => (
                       <li key={techIndex} style={{ wordSpacing: "-3px" }}>
