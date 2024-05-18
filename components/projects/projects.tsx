@@ -2,16 +2,31 @@
 
 import DataFetcher from "@/utils/dataFetcher";
 import { MotionDiv } from "@/utils/motion-div";
+import { useInView } from "framer-motion";
 import { ArrowDownLeft } from "lucide-react";
 import Image from "next/image";
+import { useRef } from "react";
 
 const ProjectsPage = () => {
+  const ref1 = useRef(null);
+
+  const isInView1 = useInView(ref1, { once: true });
+
   const data: any = DataFetcher({ dataUrl: "projects" });
-  console.log(data);
 
   return (
     <div className="md:pt-14 pt-5 mb-10 select-none" id="projects">
-      <MotionDiv className="flex items-end gap-2">
+      <MotionDiv
+        ref={ref1}
+        initial={{ opacity: 0, y: 90 }}
+        animate={isInView1 ? { opacity: 1, y: 0 } : { opacity: 0, y: 90 }}
+        transition={{
+          duration: 1.0,
+          delay: 0,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+        className="flex items-end gap-2"
+      >
         <div className="max-[880px]:text-6xl max-[570px]:text-4xl text-7xl font-ampersandlight uppercase">
           Projects
         </div>
@@ -27,7 +42,15 @@ const ProjectsPage = () => {
           .slice()
           .sort((a: any, b: any) => a.data.pos - b.data.pos)
           .map((project: any, index: any) => (
-            <div
+            <MotionDiv
+              ref={ref1}
+              initial={{ opacity: 0, y: 90 }}
+              animate={isInView1 ? { opacity: 1, y: 0 } : { opacity: 0, y: 90 }}
+              transition={{
+                duration: 1.0,
+                delay: index * 0.06,
+                ease: [0, 0.71, 0.2, 1.01],
+              }}
               className={`flex items-center gap-10 max-[885px]:flex-col 
               ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
               key={index}
@@ -78,7 +101,7 @@ const ProjectsPage = () => {
                   )}
                 </div>
               </div>
-            </div>
+            </MotionDiv>
           ))}
       </div>
     </div>
