@@ -8,22 +8,18 @@ import Image from "next/image";
 import { useRef } from "react";
 
 const AboutPage = () => {
-  const ref1 = useRef(null);
-  const ref2 = useRef(null);
-  const ref3 = useRef(null);
-
-  const isInView1 = useInView(ref1, { once: true });
-  const isInView2 = useInView(ref2, { once: true });
-  const isInView3 = useInView(ref3, { once: true });
+  const ref = useRef(null);
 
   const data: any = DataFetcher({ dataUrl: "about" });
 
   return (
-    <div className="md:pt-14 pt-5" id="about">
+    <div className="md:pt-14 pt-5" id="about" ref={ref}>
       <MotionDiv
-        ref={ref1}
         initial={{ opacity: 0, y: 90 }}
-        animate={isInView1 ? { opacity: 1, y: 0 } : { opacity: 0, y: 90 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{
+          once: true,
+        }}
         transition={{
           duration: 1.0,
           delay: 0,
@@ -44,9 +40,11 @@ const AboutPage = () => {
       <div className="flex items-center justify-between gap-20 pt-10 max-[830px]:flex-col max-[830px]:gap-10">
         <div className="flex-1 flex flex-col gap-10 text-lg">
           <MotionDiv
-            ref={ref2}
             initial={{ opacity: 0, y: 90 }}
-            animate={isInView2 ? { opacity: 1, y: 0 } : { opacity: 0, y: 90 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{
+              once: true,
+            }}
             transition={{
               duration: 1.0,
               delay: 0.1,
@@ -56,9 +54,11 @@ const AboutPage = () => {
             <p>{data?.results[0].data.intro}</p>
           </MotionDiv>
           <MotionDiv
-            ref={ref3}
             initial={{ opacity: 0, y: 90 }}
-            animate={isInView3 ? { opacity: 1, y: 0 } : { opacity: 0, y: 90 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{
+              once: true,
+            }}
             transition={{
               duration: 1.0,
               delay: 0.2,
@@ -70,9 +70,11 @@ const AboutPage = () => {
           />
         </div>
         <MotionDiv
-          ref={ref3}
           initial={{ opacity: 0, y: 90 }}
-          animate={isInView3 ? { opacity: 1, y: 0 } : { opacity: 0, y: 90 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{
+            once: true,
+          }}
           transition={{
             duration: 1.0,
             delay: 0.3,

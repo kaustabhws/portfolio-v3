@@ -9,16 +9,17 @@ import { useRef } from "react";
 
 const SkillsPage = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
 
   const data: any = DataFetcher({ dataUrl: "techn" });
 
   return (
-    <div className="md:pt-14 pt-9">
+    <div className="md:pt-14 pt-9" ref={ref}>
       <MotionDiv
-        ref={ref}
         initial={{ opacity: 0, y: 90 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 90 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{
+          once: true,
+        }}
         transition={{
           duration: 1.0,
           delay: 0,
@@ -30,15 +31,20 @@ const SkillsPage = () => {
           Skills
         </div>
         <span>
-          <ArrowDownLeft size={50} className="max-[570px]:h-7 max-[570px]:w-7" />
+          <ArrowDownLeft
+            size={50}
+            className="max-[570px]:h-7 max-[570px]:w-7"
+          />
         </span>
       </MotionDiv>
       <div className="flex items-center justify-center gap-6 flex-wrap my-10 md:w-[75%] mx-auto">
         {data?.results.map((tech: any, index: any) => (
           <MotionDiv
-            ref={ref}
             initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{
+              once: true,
+            }}
             transition={{
               duration: 1.0,
               delay: index * 0.06,
