@@ -2,7 +2,6 @@
 
 import DataFetcher from "@/utils/dataFetcher";
 import { MotionDiv } from "@/utils/motion-div";
-import { useInView } from "framer-motion";
 import { ArrowDownLeft } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";

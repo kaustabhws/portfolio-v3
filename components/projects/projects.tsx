@@ -2,7 +2,6 @@
 
 import DataFetcher from "@/utils/dataFetcher";
 import { MotionDiv } from "@/utils/motion-div";
-import { useInView } from "framer-motion";
 import { ArrowDownLeft, ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -59,7 +58,7 @@ const ProjectsPage = () => {
               }}
               transition={{
                 duration: 1.0,
-                delay: index * 0.06,
+                delay: 0.1,
                 ease: [0, 0.71, 0.2, 1.01],
               }}
               className={`flex items-center gap-10 max-[885px]:flex-col 

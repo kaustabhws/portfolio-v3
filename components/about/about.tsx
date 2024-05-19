@@ -47,7 +47,7 @@ const AboutPage = () => {
             }}
             transition={{
               duration: 1.0,
-              delay: 0.1,
+              delay: 0.05,
               ease: [0, 0.71, 0.2, 1.01],
             }}
           >
@@ -61,7 +61,7 @@ const AboutPage = () => {
             }}
             transition={{
               duration: 1.0,
-              delay: 0.2,
+              delay: 0.05,
               ease: [0, 0.71, 0.2, 1.01],
             }}
             dangerouslySetInnerHTML={{
@@ -77,7 +77,7 @@ const AboutPage = () => {
           }}
           transition={{
             duration: 1.0,
-            delay: 0.3,
+            delay: 0.05,
             ease: [0, 0.71, 0.2, 1.01],
           }}
           className="flex-1"
