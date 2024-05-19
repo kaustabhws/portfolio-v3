@@ -105,7 +105,7 @@ const ContactPage = () => {
               }}
               className="pr-2"
             >
-              Let's Talk
+              Let&apos;s Talk
             </MotionDiv>
             <MotionDiv
               initial={{ opacity: 0, y: 90 }}
